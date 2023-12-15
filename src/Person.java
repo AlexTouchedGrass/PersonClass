@@ -8,7 +8,7 @@ public class Person {
     private int x;
     private int y;
     private int z;
-    private int damage = damage;
+    private int damage;
 
     private int numPlayers = 0;
 
