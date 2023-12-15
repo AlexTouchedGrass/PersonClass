@@ -8,6 +8,7 @@ public class Person {
     private int x;
     private int y;
     private int z;
+    private int damage = damage;
 
     private int numPlayers = 0;
 
@@ -39,40 +40,38 @@ public class Person {
     //Accessors
     public String getLastName(){
         return lastName;
-    }
-
+    }    // Will
     public String getFirstName(){
         return firstName;
-    }
-
+    } // Simplify
+    public int getX(){return x;} //NORTH and SOUTH
+    public int getY(){return y;} // UP and DOWN
+    public int getZ(){return z;} // EAST AND WEST
     public int getAge(){
         return age;
-    }
-
-    public int getHp(){ return hp;}
-
-    public int getDirection(){ return direction;}
+    } //Not a baby, not a skeleton
+    public int getHp(){ return hp;} // Not dead, not a demigod (yet)
+    public int getDirection(){ return direction;} // Only 6 directions
 
     //Mutators
     public void setFirstname(String firstName){
         this.firstName = firstName;
     }
-
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
-
     public void setAge(int age){
         this.age = age;
     }
-
     public void setHp(int hp){this.hp = hp;}
-
     public void setDirection(int direction){this.direction = direction;}
 
-    public void setX(int x){this.x = x;}
-
-    public void setY(int y){this.y = y;}
-
-    public void setZ(int z){this.z = z;}
+    public void move(int direction, int units){this.direction = direction;}
+    public void teleport(Person person){
+        person.getX(); // get other player's x
+        this.getX(); // get THIS x
+    }
+    public void attack(Person person, int damage) {
+        this.damage = damage;
+    }
 }
