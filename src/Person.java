@@ -13,25 +13,13 @@ public class Person {
 
     //Constructor
     public Person(String firstName){
-        this.firstName = "P";
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
-        this.direction = 1;
-        this.hp = 20;
-        numPlayers++;
+        this("P","",16, 20, 1, 1, 1, 1);
     }
 
-    public Person(String firstName, String lastName, int x, int y, int z){
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.direction = 1;
-        this.hp = 20;
-        numPlayers++;
+    public Person(String firstName, String lastName, int age, int direction, int x, int y, int z){
+        this(firstName, lastName, 16, 20, direction, x, y, z);
     }
+
     public Person (String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
         this.lastName = lastName;
         this.firstName = firstName;
@@ -45,7 +33,7 @@ public class Person {
     }
 
     public String toString() {
-        return String.format("First name: %s Last Name: %s Age: %d Health : %d", this.firstName, this.lastName, this.age, this.hp, this.direction, this.x, this.y, this.z);
+        return String.format("First name: %s \nLast Name: %s \nAge: %d \nHealth : %d \nDirection: %d Coordinates: X %d Y %d Z %d", firstName, lastName, age, hp, direction, x, y, z);
     }
 
     //Accessors
@@ -78,5 +66,13 @@ public class Person {
         this.age = age;
     }
 
-    public
+    public void setHp(int hp){this.hp = hp;}
+
+    public void setDirection(int direction){this.direction = direction;}
+
+    public void setX(int x){this.x = x;}
+
+    public void setY(int y){this.y = y;}
+
+    public void setZ(int z){this.z = z;}
 }
