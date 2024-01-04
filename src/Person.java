@@ -52,6 +52,12 @@ public class Person {
     } //Not a baby, not a skeleton
     public int getHp(){ return hp;} // Not dead, not a demigod (yet)
     public int getDirection(){ return direction;} // Only 6 directions
+    public double getDistance(int x, int y, int z){
+        return Math.sqrt(Math.pow(x - this.x,2) + Math.pow(y - this.y,2) + Math.pow(z - this.z,2));
+    }
+    public double getDistance(Person person){
+        return this.getDistance(person.getX(),person.getY(),person.getZ());
+    }
 
     //Mutators
     public void setFirstname(String firstName){
@@ -65,13 +71,15 @@ public class Person {
     }
     public void setHp(int hp){this.hp = hp;}
     public void setDirection(int direction){this.direction = direction;}
-
     public void move(int direction, int units){this.direction = direction;}
     public void teleport(Person person){
         person.getX(); // get other player's x
         this.getX(); // get THIS x
     }
+    public void teleport(int x, int y, int z){this.x = x; this.y = y; this.z = z;}
     public void attack(Person person, int damage) {
         this.damage = damage;
     }
+
+
 }
