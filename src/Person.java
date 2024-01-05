@@ -12,12 +12,28 @@ public class Person {
     private int numPlayers = 0;
 
     //Constructor
-    public Person(String firstName, String lastName){
-        this("P","",16, 20, 1, 1, 1, 1);
+    public Person(String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.age = age;
+        this.hp = hp;
+        this.direction = direction;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        numPlayers++;
     }
 
-    public Person(String firstName, String lastName, int age, int direction, int x, int y, int z){
-        this(firstName, lastName, 16, 20, direction, x, y, z);
+    public Person(String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.age = age;
+        this.hp = hp;
+        this.direction = direction;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        numPlayers++;
     }
 
     public Person (String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
