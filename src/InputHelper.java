@@ -214,4 +214,9 @@ public class InputHelper {
             System.out.println();
         }
     }
+
+    //Bold Text
+    public static void boldChar(String character, int amount){
+
+    }
 }
