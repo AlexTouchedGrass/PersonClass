@@ -4,6 +4,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        String msg = "SkyWorld VI";
+        //Title
+        int leftSpaces = ((54-msg.length())/2);
+        int rightSpaces = (54-leftSpaces-msg.length());
+
+        InputHelper.printCharacter("*", 60, true);
+
+        InputHelper.printCharacter("*",3, false);
+        InputHelper.printCharacter(" ", leftSpaces, false);
+        System.out.print(msg);
+        InputHelper.printCharacter(" ", rightSpaces, false);
+        InputHelper.printCharacter("*", 3, true);
+
+        InputHelper.printCharacter("*", 60, false);
+
+        System.out.println("");
         //Person 1
         String p1FirstName = "P";
         String p1LastName = "T";
@@ -29,9 +45,9 @@ public class Main {
         int p3Z = InputHelper.getRangedInt(scan, "Enter Person 3's Z Coordinate:",0,1000);
 
         //Creating Person Objects
-        Person p1 = new Person(p1Username);
-        Person p2 = new Person(p2Username, 16, 1, p2X, p2Y, p2Z);
-        Person p3 = new Person(p3Username, p3Age, p3Health, p3Direction, p3X, p3Y, p3Z);
+        Person p1 = new Person(p1FirstName,p1LastName);
+        Person p2 = new Person(p2FirstName, p2LastName, 16, 1, p2X, p2Y, p2Z);
+        Person p3 = new Person(p3FirstName, p3LastName, p3Age, p3Health, p3Direction, p3X, p3Y, p3Z);
 
         //Displaying the info using toString
         System.out.println("Person 1 Info\n" + p1);

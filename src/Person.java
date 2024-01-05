@@ -9,11 +9,10 @@ public class Person {
     private int y;
     private int z;
     private int damage;
-
     private int numPlayers = 0;
 
     //Constructor
-    public Person(String firstName){
+    public Person(String firstName, String lastName){
         this("P","",16, 20, 1, 1, 1, 1);
     }
 
