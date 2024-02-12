@@ -9,10 +9,34 @@ public class Person {
     private int y;
     private int z;
     private int damage;
-    private static int numPlayers = 0;
+    private int numPlayers = 0;
 
     //Constructor
-    public Person(String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
+    public Person(){
+        lastName = "Lost";
+        firstName = "Dave";
+        age = 16;
+        hp = 20;
+        direction = 4;
+        x = 1;
+        y = 1;
+        z = 1;
+        numPlayers++;
+    }
+
+    public Person(String firstName, String lastName, int x, int y, int z){
+        this.lastName = lastName;
+        this.firstName = firstName;
+        age = 18;
+        hp = 20;
+        direction = 2;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        numPlayers++;
+    }
+
+    public Person (String firstName, String lastName, int age, int hp, int direction, int x, int y, int z){
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
@@ -21,8 +45,7 @@ public class Person {
         this.x = x;
         this.y = y;
         this.z = z;
-
-        if(numPlayers < 3){numPlayers++;}
+        numPlayers++;
     }
 
     public String toString() {
