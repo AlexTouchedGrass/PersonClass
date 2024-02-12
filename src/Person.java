@@ -88,12 +88,15 @@ public class Person {
     public void setDirection(int direction){this.direction = direction;}
     public void move(int direction, int units){this.direction = direction;}
     public void teleport(Person person){
-        person.getX(); // get other player's x
-        this.getX(); // get THIS x
+        this.x = person.getX(); // get THIS x
+        this.y = person.getY();
+        this.z = person.getZ();
     }
     public void teleport(int x, int y, int z){this.x = x; this.y = y; this.z = z;}
     public void attack(Person person, int damage) {
-        this.damage = damage;
+        this.hp += (damage/2);
+        person.setHp(person.getHp() - damage);
+
     }
 
 
