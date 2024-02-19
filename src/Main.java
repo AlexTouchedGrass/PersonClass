@@ -63,6 +63,11 @@ public class Main {
         System.out.println("Person 2 Info\n" + p2);
         System.out.println("Person 3 Info\n" + p3);
 
+        System.out.println("And Now To Simulate The Game.");
+
+        p1.attack(p2,5);
+        System.out.println("Player 1 hits Player 2.\n They deal 5 damage and leave Player 2 with \n" + p2.getHp());
+
 
     }
 }
